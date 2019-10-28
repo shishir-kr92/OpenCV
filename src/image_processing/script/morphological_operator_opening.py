@@ -15,13 +15,6 @@ def load_img():
 	return img
 
 
-def add_background_noise(img):
-	'''
-		add noise to black background
-	'''
-	white_noise = np.random.randint(low=0, high=2, size=(600, 600), dtype=np.uint8) * 255
-	return white_noise + img 
-
 def add_foreground_noise(img):
 	'''
 		add noise to white fore ground
@@ -42,10 +35,12 @@ def opening(src):
 
 if __name__ == "__main__":
 	img = load_img()
-	noisy_img = add_foreground_noise(img)
+	# noisy_img = add_foreground_noise(img)
 	# dst = opening(noisy_img)
-	# cv2.imshow("img", img)
+	dst = opening(img)
+	
+	cv2.imshow("img", img)
 	# cv2.imshow("noise_img", noisy_img)
-	# cv2.imshow("dst", dst)
+	cv2.imshow("dst", dst)
 	cv2.waitKey(-1)
 	cv2.destroyAllWindows()
