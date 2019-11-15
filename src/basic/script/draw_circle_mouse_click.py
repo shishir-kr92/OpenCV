@@ -9,7 +9,7 @@ blank_img = np.zeros((512, 512, 3))
 
 def draw_circle(event, x_coordinate, y_coordinate, flags, param):
 	if event == cv2.EVENT_LBUTTONDOWN:
-		cv2.circle(blank_img, 
+	draw_interactivly_on_video	cv2.circle(blank_img, 
 				center = (x_coordinate, y_coordinate), 
 				radius=100,
 				color=(250,250,0),
